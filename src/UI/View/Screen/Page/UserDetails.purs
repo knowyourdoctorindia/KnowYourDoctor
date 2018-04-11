@@ -53,7 +53,7 @@ view push state =
 		, root true
 		, clickable "true"
 		] <> overrides "UserDetails" push state )
-		[ (mapDom ToolBar.view push state.toolBar1State ToolBar1Action 
+		[ (mapDom ToolBar.view push state.toolBar1State ToolBar1Action
 			[ height_c $ V 56
 			, width_c Match_Parent
 			, override_c "t_subjects" "Filter Details"
@@ -65,24 +65,25 @@ view push state =
 			, gravity "center_horizontal"
 			, margin "9,20,10,0"
 			] <> overrides "Contents" push state )
-			[ (mapDom ListDetailCard.view push state.listDetailCard1State ListDetailCard1Action 
+			[ (mapDom ListDetailCard.view push state.listDetailCard1State ListDetailCard1Action
 				[ height_c $ V 45
 				, width_c Match_Parent
 				, margin_c "1,0,0,0"
+				, override_c "t_state" "State"
 				])
-			, (mapDom ListDetailCard.view push state.listDetailCard2State ListDetailCard2Action 
+			, (mapDom ListDetailCard.view push state.listDetailCard2State ListDetailCard2Action
 				[ height_c $ V 45
 				, width_c Match_Parent
 				, margin_c "1,20,0,0"
 				, override_c "t_state" "District"
 				])
-			, (mapDom ListDetailCard.view push state.listDetailCard3State ListDetailCard3Action 
+			, (mapDom ListDetailCard.view push state.listDetailCard3State ListDetailCard3Action
 				[ height_c $ V 45
 				, width_c Match_Parent
 				, margin_c "1,20,0,0"
 				, override_c "t_state" "Area"
 				])
-			, (mapDom ListDetailCard.view push state.listDetailCard4State ListDetailCard4Action 
+			, (mapDom ListDetailCard.view push state.listDetailCard4State ListDetailCard4Action
 				[ height_c $ V 45
 				, width_c Match_Parent
 				, margin_c "0,20,1,0"
@@ -114,4 +115,3 @@ view push state =
 				] <> overrides "Submit" push state )
 			]
 		]
-

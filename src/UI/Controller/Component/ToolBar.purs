@@ -9,7 +9,6 @@ import FRP (FRP)
 
 
 
-import UI.Controller.Component.Arrowback as Arrowback
 
 type ScreenInput = String
 
@@ -17,18 +16,15 @@ type ScreenOutput = String
 
 data Action
 	= ToolBarAction
-	| Arrowback1Action Arrowback.Action
 
 
 type State =
-	{ arrowback1State :: Arrowback.State
-	}
+	{	}
 
 
 initialState :: State
 initialState =
-	{ arrowback1State : Arrowback.initialState
-	}
+	{	}
 
 
 eval
@@ -36,7 +32,6 @@ eval
 	-> State 
 	-> State
 eval ToolBarAction state = state
-eval (Arrowback1Action action) state = state { arrowback1State = Arrowback.eval action state.arrowback1State }
 
 
 overrides

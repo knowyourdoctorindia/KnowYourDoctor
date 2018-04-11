@@ -9,7 +9,6 @@ import FRP (FRP)
 
 
 
-import UI.Controller.Component.DrPhoto as DrPhoto
 
 type ScreenInput = String
 
@@ -17,18 +16,15 @@ type ScreenOutput = String
 
 data Action
 	= DrListElementAction
-	| DrPhoto1Action DrPhoto.Action
 
 
 type State =
-	{ drPhoto1State :: DrPhoto.State
-	}
+	{	}
 
 
 initialState :: State
 initialState =
-	{ drPhoto1State : DrPhoto.initialState
-	}
+	{	}
 
 
 eval
@@ -36,7 +32,6 @@ eval
 	-> State 
 	-> State
 eval DrListElementAction state = state
-eval (DrPhoto1Action action) state = state { drPhoto1State = DrPhoto.eval action state.drPhoto1State }
 
 
 overrides
