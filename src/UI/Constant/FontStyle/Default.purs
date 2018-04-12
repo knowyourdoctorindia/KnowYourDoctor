@@ -8,5 +8,8 @@ sOURCESANSPROREGULAR = "SourceSansPro-Regular"
 sOURCESANSPROSEMIBOLD :: FontStyle
 sOURCESANSPROSEMIBOLD = "SourceSansPro-SemiBold"
 
+sOURCESANSPROBOLD :: FontStyle
+sOURCESANSPROBOLD = "SourceSansPro-Bold"
+
 hELVETICA :: FontStyle
 hELVETICA = "Helvetica"

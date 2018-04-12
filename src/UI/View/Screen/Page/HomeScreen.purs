@@ -22,7 +22,7 @@ import UI.Constant.Accessibility.Default as HINT
 
 
 import UI.View.Component.ToolBar as ToolBar
-
+import UI.View.Component.DrListElement as DrListElement
 
 import UI.Controller.Screen.Page.HomeScreen (Action(..), State, ScreenInput, ScreenOutput, initialState, eval, overrides)
 
@@ -46,6 +46,7 @@ view push state =
 		, width Match_Parent
 		, orientation "vertical"
 		, gravity "center_horizontal"
+		, padding "0,0,0,513"
 		, background Color.a_FFFFFFFF
 		, cornerRadius "0"
 		, root true
@@ -56,20 +57,11 @@ view push state =
 			, width_c Match_Parent
 			, override_c "t_subjects" "List of Doctors"
 			])
-		, scrollView
-			([ height $ V 564
-			, width Match_Parent
-			, margin "10,20,10,0"
-			, background Color.a_FFFFFFFF
-			, cornerRadius "0"
-			] <> overrides "Scroll" push state )
-			[ linearLayout
-				([ height $ V 50
-				, width Match_Parent
-				, orientation "horizontal"
-				, gravity "center"
-				] <> overrides "DrList" push state )
-				[]
-			]
+		, (mapDom DrListElement.view push state.drListElement1State DrListElement1Action 
+			[ height_c $ V 50
+			, width_c Match_Parent
+			, margin_c "10,20,10,0"
+			, override_c "t_hospitalName" "Koramangala"
+			])
 		]
 

@@ -22,6 +22,7 @@ import UI.Constant.Accessibility.Default as HINT
 
 
 import UI.View.Component.ToolBar as ToolBar
+
 import UI.View.Component.ListDetailCard as ListDetailCard
 
 
@@ -58,37 +59,53 @@ view push state =
 			, width_c Match_Parent
 			, override_c "t_subjects" "Filter Details"
 			])
-		, linearLayout
-			([ height $ V 240
+		, scrollView
+			([ height $ V 492
 			, width Match_Parent
-			, orientation "vertical"
-			, gravity "center_horizontal"
-			, margin "9,20,10,0"
-			] <> overrides "Contents" push state )
-			[ (mapDom ListDetailCard.view push state.listDetailCard1State ListDetailCard1Action
-				[ height_c $ V 45
-				, width_c Match_Parent
-				, margin_c "1,0,0,0"
-				, override_c "t_state" "State"
-				])
-			, (mapDom ListDetailCard.view push state.listDetailCard2State ListDetailCard2Action
-				[ height_c $ V 45
-				, width_c Match_Parent
-				, margin_c "1,20,0,0"
-				, override_c "t_state" "District"
-				])
-			, (mapDom ListDetailCard.view push state.listDetailCard3State ListDetailCard3Action
-				[ height_c $ V 45
-				, width_c Match_Parent
-				, margin_c "1,20,0,0"
-				, override_c "t_state" "Area"
-				])
-			, (mapDom ListDetailCard.view push state.listDetailCard4State ListDetailCard4Action
-				[ height_c $ V 45
-				, width_c Match_Parent
-				, margin_c "0,20,1,0"
-				, override_c "t_state" "Disease"
-				])
+			, background Color.a_FFFFFFFF
+			, cornerRadius "0"
+			] <> overrides "ScrollView" push state )
+			[ scrollView
+				([ height $ V 492
+				, width Match_Parent
+				, background Color.a_FFFFFFFF
+				, cornerRadius "0"
+				] <> overrides "Group" push state )
+				[ linearLayout
+					([ height $ V 492
+					, width Match_Parent
+					, orientation "vertical"
+					, gravity "center_horizontal"
+					, padding "9,20,10,0"
+					, background Color.a_FFFFFFFF
+					, cornerRadius "0"
+					] <> overrides "EditFields" push state )
+					[ (mapDom ListDetailCard.view push state.listDetailCard1State ListDetailCard1Action
+						[ height_c $ V 45
+						, width_c Match_Parent
+						, margin_c "1,0,0,0"
+						, override_c "t_state" "State"
+						])
+					, (mapDom ListDetailCard.view push state.listDetailCard2State ListDetailCard2Action
+						[ height_c $ V 45
+						, width_c Match_Parent
+						, margin_c "1,20,0,0"
+						, override_c "t_state" "District"
+						])
+					, (mapDom ListDetailCard.view push state.listDetailCard3State ListDetailCard3Action
+						[ height_c $ V 45
+						, width_c Match_Parent
+						, margin_c "1,20,0,0"
+						, override_c "t_state" "Area"
+						])
+					, (mapDom ListDetailCard.view push state.listDetailCard4State ListDetailCard4Action
+						[ height_c $ V 45
+						, width_c Match_Parent
+						, margin_c "0,20,1,0"
+						, override_c "t_state" "Disease"
+						])
+					]
+				]
 			]
 		, linearLayout
 			([ weight "1"
@@ -99,16 +116,15 @@ view push state =
 			, width Match_Parent
 			, orientation "horizontal"
 			, gravity "center"
-			, margin "20,0,20,0"
-			, background Color.a_9F788624
-			, stroke "1,#969696"
+			, margin "20,12,20,0"
+			, background Color.a_FFFF3461
 			, cornerRadius "8"
-			] <> overrides "Group" push state )
+			] <> overrides "SubmitButton" push state )
 			[ textView
-				([ height $ V 40
+				([ height $ V 31
 				, width Match_Parent
 				, text STR.submit1
-				, textSize FontSize.a_32
+				, textSize FontSize.a_24
 				, color FontColor.a_FFFFFFFF
 				, fontStyle Font.sOURCESANSPROREGULAR
 				, gravity "center"

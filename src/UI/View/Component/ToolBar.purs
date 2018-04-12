@@ -39,10 +39,10 @@ view push state parent =
 	linearLayout
 		([ height_p (V 56) parent
 		, width_p Match_Parent parent
-		, orientation_p "horizontal" parent
+		, orientation_p "vertical" parent
 		, gravity_p "center_vertical" parent
-		, padding_p "20,0,3,0" parent
-		, background_p Color.a_FFFFFFFF parent
+		, padding_p "20,13,3,16" parent
+		, background_p Color.a_FFFF3461 parent
 		, cornerRadius_p "0" parent
 		, root_p true parent
 		, margin_p "0,0,0,0" parent
@@ -50,24 +50,27 @@ view push state parent =
 		, visibility_p "null" parent
 		] <> (overrides "Group" push state))
 		[ linearLayout
-			([ height $ V 24
+			([ height $ V 27
 			, width Match_Parent
 			, orientation "horizontal"
 			] <> overrides "TopBarWithArrowContents" push state )
 			[ imageView
 				([ height $ V 24
 				, width $ V 24
+				, margin "0,3,0,0"
+				, orientation "horizontal"
+				, gravity "center"
 				, imageUrl "arrowback62CAD875"
 				] <> overrides "Arrowback" push state )
 			, textView
-				([ height $ V 20
+				([ height $ V 25
 				, width $ V 285
-				, margin "28,1,0,0"
+				, margin "28,0,0,0"
 				, weight "1"
 				, t_subjects parent
-				, textSize FontSize.a_16
-				, color FontColor.a_FF333333
-				, fontStyle Font.sOURCESANSPROSEMIBOLD
+				, textSize FontSize.a_20
+				, color FontColor.a_FFFFFFFF
+				, fontStyle Font.sOURCESANSPROBOLD
 				, gravity "left"
 				] <> overrides "Subjects" push state )
 			]

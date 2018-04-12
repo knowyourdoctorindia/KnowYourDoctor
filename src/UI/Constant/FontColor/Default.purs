@@ -8,8 +8,8 @@ a_FFFFFFFF = "#ffffffff"
 a_FF000000 :: FontColor
 a_FF000000 = "#ff000000"
 
-a_FF333333 :: FontColor
-a_FF333333 = "#ff333333"
+a_FF484848 :: FontColor
+a_FF484848 = "#ff484848"
 
 a_FF00BFFF :: FontColor
 a_FF00BFFF = "#ff00bfff"

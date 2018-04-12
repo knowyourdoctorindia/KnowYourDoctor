@@ -60,14 +60,14 @@ view push state parent =
 			] <> overrides "Group" push state )
 			[ imageView
 				([ height $ V 30
-				, width $ V 30
+				, width $ V 31
 				, margin "0,8,0,0"
-				, imageUrl "drphoto180878FB9"
-				] <> overrides "DrPhoto" push state )
+				, imageUrl "addressiconB1C4C452"
+				] <> overrides "Addressicon" push state )
 			, textView
 				([ height $ V 73
 				, width $ V 264
-				, margin "26,0,0,0"
+				, margin "25,0,0,0"
 				, weight "1"
 				, text STR.number7
 				, textSize FontSize.a_12

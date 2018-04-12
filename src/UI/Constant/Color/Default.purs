@@ -5,8 +5,8 @@ import UI.Constant.Type
 a_FFFFFFFF :: Color
 a_FFFFFFFF = "#ffffffff"
 
-a_9F788624 :: Color
-a_9F788624 = "#9f788624"
+a_FFFF3461 :: Color
+a_FFFF3461 = "#ffff3461"
 
 a_FFB2AC00 :: Color
 a_FFB2AC00 = "#ffb2ac00"

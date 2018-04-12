@@ -26,6 +26,7 @@ import UI.Constant.Accessibility.Default as HINT
 
 import UI.Controller.Component.DrListElement (Action(..), State, initialState, eval, overrides)
 
+t_hospitalName = override_p "t_hospitalName" ""
 
 
 view
@@ -74,7 +75,7 @@ view push state parent =
 				([ height $ V 15
 				, width Match_Parent
 				, margin "0,2,0,0"
-				, text STR.hospitalName5
+				, t_hospitalName parent
 				, textSize FontSize.a_12
 				, color FontColor.a_FF000000
 				, fontStyle Font.sOURCESANSPROREGULAR

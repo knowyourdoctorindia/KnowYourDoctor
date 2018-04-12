@@ -53,8 +53,8 @@ view push state parent =
 			[ imageView
 				([ height $ V 30
 				, width $ V 30
-				, imageUrl "drphoto180878FB9"
-				] <> overrides "DrPhoto" push state )
+				, imageUrl "phoneicon5B9969A2"
+				] <> overrides "Phoneicon" push state )
 			, textView
 				([ height $ V 18
 				, width $ V 149

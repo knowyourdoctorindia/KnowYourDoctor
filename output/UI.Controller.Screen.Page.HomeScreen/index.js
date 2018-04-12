@@ -7,6 +7,7 @@ var FRP = require("../FRP");
 var Prelude = require("../Prelude");
 var PrestoDOM_Core = require("../PrestoDOM.Core");
 var PrestoDOM_Types_Core = require("../PrestoDOM.Types.Core");
+var UI_Controller_Component_DrListElement = require("../UI.Controller.Component.DrListElement");
 var UI_Controller_Component_ToolBar = require("../UI.Controller.Component.ToolBar");
 var HomeScreenAction = (function () {
     function HomeScreenAction() {
@@ -24,6 +25,15 @@ var ToolBar1Action = (function () {
     };
     return ToolBar1Action;
 })();
+var DrListElement1Action = (function () {
+    function DrListElement1Action(value0) {
+        this.value0 = value0;
+    };
+    DrListElement1Action.create = function (value0) {
+        return new DrListElement1Action(value0);
+    };
+    return DrListElement1Action;
+})();
 var overrides = function (v) {
     return function (push) {
         return function (state) {
@@ -33,7 +43,8 @@ var overrides = function (v) {
 };
 var initialState = function (input) {
     return {
-        toolBar1State: UI_Controller_Component_ToolBar.initialState
+        toolBar1State: UI_Controller_Component_ToolBar.initialState,
+        drListElement1State: UI_Controller_Component_DrListElement.initialState
     };
 };
 var $$eval = function (v) {
@@ -43,22 +54,35 @@ var $$eval = function (v) {
         };
         if (v instanceof ToolBar1Action) {
             return Data_Either.Right.create((function () {
-                var $5 = {};
-                for (var $6 in state) {
-                    if ({}.hasOwnProperty.call(state, $6)) {
-                        $5[$6] = state[$6];
+                var $6 = {};
+                for (var $7 in state) {
+                    if ({}.hasOwnProperty.call(state, $7)) {
+                        $6[$7] = state[$7];
                     };
                 };
-                $5.toolBar1State = UI_Controller_Component_ToolBar["eval"](v.value0)(state.toolBar1State);
-                return $5;
+                $6.toolBar1State = UI_Controller_Component_ToolBar["eval"](v.value0)(state.toolBar1State);
+                return $6;
             })());
         };
-        throw new Error("Failed pattern match at UI.Controller.Screen.Page.HomeScreen line 34, column 1 - line 37, column 37: " + [ v.constructor.name, state.constructor.name ]);
+        if (v instanceof DrListElement1Action) {
+            return Data_Either.Right.create((function () {
+                var $10 = {};
+                for (var $11 in state) {
+                    if ({}.hasOwnProperty.call(state, $11)) {
+                        $10[$11] = state[$11];
+                    };
+                };
+                $10.drListElement1State = UI_Controller_Component_DrListElement["eval"](v.value0)(state.drListElement1State);
+                return $10;
+            })());
+        };
+        throw new Error("Failed pattern match at UI.Controller.Screen.Page.HomeScreen line 38, column 1 - line 41, column 37: " + [ v.constructor.name, state.constructor.name ]);
     };
 };
 module.exports = {
     HomeScreenAction: HomeScreenAction,
     ToolBar1Action: ToolBar1Action,
+    DrListElement1Action: DrListElement1Action,
     initialState: initialState,
     "eval": $$eval,
     overrides: overrides

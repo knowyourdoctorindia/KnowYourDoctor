@@ -9,9 +9,9 @@ import FRP (FRP)
 import PrestoDOM.Core (runScreen)
 import Control.Monad.Eff.Exception (EXCEPTION)
 import Control.Monad.Aff(launchAff, makeAff, Aff, liftEff')
+import UI.View.Screen.Page.HomeScreen (screen) as HomeScreen
 import UI.View.Screen.Page.UserDetails (screen) as UserDetails
 import UI.View.Screen.Page.HospitalDetails (screen) as HospitalDetails
-import UI.View.Screen.Page.HomeScreen (screen) as HomeScreen
 import UI.View.Screen.Page.SplashScreen (screen) as SplashScreen
 
 foreign import duiShowScreen :: forall e. (String -> Eff e Unit) -> Eff e Unit
@@ -24,11 +24,11 @@ main = do
 
 changeScreen screenName =
 	case screenName of
+		"HomeScreen" -> runUI $ HomeScreen.screen ""
 		"UserDetails" -> runUI $ UserDetails.screen ""
 		"HospitalDetails" -> runUI $ HospitalDetails.screen ""
-		"HomeScreen" -> runUI $ HomeScreen.screen ""
 		"SplashScreen" -> runUI $ SplashScreen.screen ""
-		_ -> runUI $ UserDetails.screen ""
+		_ -> runUI $ HomeScreen.screen ""
 
 runUI screen = do
 	makeAff (\err sc -> runScreen screen sc)

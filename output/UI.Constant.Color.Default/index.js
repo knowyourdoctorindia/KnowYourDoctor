@@ -2,10 +2,10 @@
 "use strict";
 var UI_Constant_Type = require("../UI.Constant.Type");
 var a_FFFFFFFF = "#ffffffff";
+var a_FFFF3461 = "#ffff3461";
 var a_FFB2AC00 = "#ffb2ac00";
-var a_9F788624 = "#9f788624";
 module.exports = {
     a_FFFFFFFF: a_FFFFFFFF,
-    a_9F788624: a_9F788624,
+    a_FFFF3461: a_FFFF3461,
     a_FFB2AC00: a_FFB2AC00
 };

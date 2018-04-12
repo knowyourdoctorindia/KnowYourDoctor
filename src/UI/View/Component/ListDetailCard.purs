@@ -53,7 +53,7 @@ view push state parent =
 			, t_state parent
 			, textSize FontSize.a_24
 			, color FontColor.a_FF000000
-			, fontStyle Font.sOURCESANSPROREGULAR
+			, fontStyle Font.sOURCESANSPROSEMIBOLD
 			, gravity "left"
 			] <> overrides "State" push state )
 		, linearLayout
@@ -69,10 +69,10 @@ view push state parent =
 			, cornerRadius "8"
 			] <> overrides "Group" push state )
 			[ textView
-				([ height $ V 31
+				([ height $ V 25
 				, width Match_Parent
 				, text STR.karnataka10
-				, textSize FontSize.a_24
+				, textSize FontSize.a_20
 				, color FontColor.a_87424242
 				, fontStyle Font.sOURCESANSPROREGULAR
 				, gravity "center"

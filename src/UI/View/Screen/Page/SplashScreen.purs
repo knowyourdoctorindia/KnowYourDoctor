@@ -46,41 +46,41 @@ view push state =
 		, width Match_Parent
 		, orientation "vertical"
 		, gravity "center_horizontal"
-		, padding "0,182,0,309"
+		, padding "0,169,0,206"
 		, background Color.a_FFFFFFFF
 		, cornerRadius "0"
 		, root true
 		, clickable "true"
 		] <> overrides "Group" push state )
 		[ linearLayout
-			([ height $ V 98
-			, width $ V 98
+			([ height $ V 200
+			, width $ V 226
 			, orientation "horizontal"
 			, gravity "center"
-			, margin "131,0,131,0"
+			, margin "67,0,67,0"
 			] <> overrides "ImageGroup" push state )
 			[ imageView
-				([ height $ V 98
-				, width $ V 98
-				, imageUrl "a9b74a6d1fb97cab857c204760c14e0eeb08e165"
-				] <> overrides "a_479956200" push state )
+				([ height Match_Parent
+				, width Match_Parent
+				, imageUrl "4f7567e0a05a1ca91745875071783ee2f6a85324"
+				] <> overrides "CVDProblemsWithHealth" push state )
 			]
 		, linearLayout
-			([ height $ V 31
+			([ height $ V 45
 			, width Match_Parent
 			, orientation "horizontal"
 			, gravity "center"
 			, margin "0,20,0,0"
 			, background Color.a_FFFFFFFF
 			, cornerRadius "0"
-			] <> overrides "Group2" push state )
+			] <> overrides "TextGroup" push state )
 			[ textView
-				([ height $ V 31
+				([ height $ V 45
 				, width Match_Parent
 				, text STR.knowYourDoctor3
-				, textSize FontSize.a_24
-				, color FontColor.a_FF000000
-				, fontStyle Font.sOURCESANSPROSEMIBOLD
+				, textSize FontSize.a_36
+				, color FontColor.a_FF484848
+				, fontStyle Font.sOURCESANSPROBOLD
 				, gravity "center"
 				] <> overrides "KnowYourDoctor" push state )
 			]

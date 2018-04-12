@@ -24,6 +24,7 @@ import UI.Constant.Accessibility.Default as HINT
 import UI.View.Component.ToolBar as ToolBar
 
 
+
 import UI.View.Component.DetailListElement as DetailListElement
 import UI.View.Component.DetailListElementSmall as DetailListElementSmall
 
@@ -49,64 +50,63 @@ view push state =
 		, width Match_Parent
 		, orientation "vertical"
 		, gravity "center_horizontal"
-		, padding "0,0,0,257"
 		, background Color.a_FFFFFFFF
 		, cornerRadius "0"
 		, root true
 		, clickable "true"
 		] <> overrides "Group" push state )
-		[ (mapDom ToolBar.view push state.toolBar1State ToolBar1Action 
+		[ (mapDom ToolBar.view push state.toolBar1State ToolBar1Action
 			[ height_c $ V 56
 			, width_c Match_Parent
 			, override_c "t_subjects" "Hospital Detail"
 			])
-		, linearLayout
-			([ height $ V 100
-			, width $ V 100
-			, orientation "horizontal"
-			, gravity "center"
-			, margin "130,20,130,0"
-			] <> overrides "Photo" push state )
+		, scrollView
+			([ height $ V 565
+			, width Match_Parent
+			, margin "9,20,10,0"
+			, background Color.a_FFFFFFFF
+			, cornerRadius "0"
+			] <> overrides "Scroll" push state )
 			[ linearLayout
-				([ height $ V 100
+				([ height $ V 307
 				, width Match_Parent
-				, orientation "horizontal"
-				, gravity "center"
-				] <> overrides "DrPhoto" push state )
+				, orientation "vertical"
+				, gravity "center_horizontal"
+				] <> overrides "Content1" push state )
 				[ imageView
 					([ height $ V 100
 					, width $ V 100
+					, margin "121,0,120,0"
 					, imageUrl "drphoto1DC64C5D6"
 					] <> overrides "DrPhoto1" push state )
+				, linearLayout
+					([ height $ V 23
+					, width Match_Parent
+					, orientation "horizontal"
+					, gravity "center"
+					, margin "1,10,0,0"
+					, cornerRadius "0"
+					] <> overrides "Group2" push state )
+					[ textView
+						([ height $ V 23
+						, width Match_Parent
+						, text STR.hospitalName2
+						, textSize FontSize.a_18
+						, color FontColor.a_FF000000
+						, fontStyle Font.sOURCESANSPROSEMIBOLD
+						, gravity "center"
+						] <> overrides "HospitalName" push state )
+					]
+				, (mapDom DetailListElement.view push state.detailListElement1State DetailListElement1Action
+					[ height_c $ V 90
+					, width_c Match_Parent
+					, margin_c "0,20,0,0"
+					])
+				, (mapDom DetailListElementSmall.view push state.detailListElementSmall1State DetailListElementSmall1Action
+					[ height_c $ V 44
+					, width_c Match_Parent
+					, margin_c "1,20,0,0"
+					])
 				]
 			]
-		, linearLayout
-			([ height $ V 23
-			, width Match_Parent
-			, orientation "horizontal"
-			, gravity "center"
-			, margin "10,10,10,0"
-			, cornerRadius "0"
-			] <> overrides "Group2" push state )
-			[ textView
-				([ height $ V 23
-				, width Match_Parent
-				, text STR.hospitalName2
-				, textSize FontSize.a_18
-				, color FontColor.a_FF000000
-				, fontStyle Font.sOURCESANSPROSEMIBOLD
-				, gravity "center"
-				] <> overrides "HospitalName" push state )
-			]
-		, (mapDom DetailListElement.view push state.detailListElement1State DetailListElement1Action 
-			[ height_c $ V 90
-			, width_c Match_Parent
-			, margin_c "9,20,10,0"
-			])
-		, (mapDom DetailListElementSmall.view push state.detailListElementSmall1State DetailListElementSmall1Action 
-			[ height_c $ V 44
-			, width_c Match_Parent
-			, margin_c "10,20,10,0"
-			])
 		]
-
